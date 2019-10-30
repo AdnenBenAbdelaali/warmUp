@@ -1,0 +1,32 @@
+.container{
+	color: blue;
+} 
+/*
+#firstDiv{
+	height: 200px;
+	width: 300px;
+	background-color: blue;
+} */
+
+/*
+#secondDiv{
+	height: 200px;
+	width: 300px;
+	background-color: red;
+} 
+*/
+#flex-container{
+	display: flex;
+	flex-direction: row;
+	
+}
+
+#flex-container> .left-item{
+	width: 10rem;
+	flex:auto;
+} 
+
+
+#flex-container> .right-item{
+	width: 10rem;
+}
