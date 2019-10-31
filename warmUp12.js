@@ -9,7 +9,7 @@ Output
     Your function should return the starting (minimum) and ending (maximum) numbers of the range in the form of an array/list comprised of two integers.
     Test Example
 
-    let inputString = '1568141291110137';
+    let inputString = '15 6 8 14 12 9 11 10 13 7';
 
     mysteryRange(inputString,10) // [6,15]
 
@@ -21,4 +21,43 @@ Technical Details
 
     -The maximum size of a range will be 100 integers
     -The starting number of a range will be: 0 < n < 100
- */
+ */ 
+
+ function mysteryRange(str, numberOfElements) {
+ 	
+ 	var array = [];
+ 	var arrayFinal = [];
+ 	array = str.split(' ');
+ 	var check = true;
+
+ 	if(array.length > 100 || numberOfElements !== array.length){
+ 		return "Please  try again later !";
+ 	} 
+
+
+
+ 	for(var i = 0; i < array.length; i++) {
+ 		arrayFinal.push(parseInt(array[i]));
+ 	};
+
+ 	while(check === true) {
+ 			check = false;
+ 			for(var j = 0; j < arrayfinal.length-1; j++) {
+ 				if( (arrayfinal[j] < 0) || (arrayfinal[j] > 100) ) {
+ 					return "One of your numbers is out of range .Try again later !"
+ 				}
+
+ 				for(var h = j+1; h < arrayFinal.length; h++) {
+ 					if(arrayFinal[j] < arrayFinal[h]) {
+ 						var vexel = arrayFinal[j];
+ 						arrayFinal[j] = arrayFinal[h]; 
+ 						arrayFinal[h] = vexel;
+ 						check = true;
+ 				}
+ 			}
+ 		}
+ 	}
+ 	
+ 	return 'the range of numbers is from ' + arrayFinal[arrayFinal.length - 1] + ' to ' + arrayFinal[0];
+
+ };
