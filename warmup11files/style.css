@@ -18,15 +18,21 @@
 #flex-container{
 	display: flex;
 	flex-direction: row;
+	color: blue;
 	
 }
 
 #flex-container> .left-item{
-	width: 10rem;
+	width: 50%;
+	height: auto;
 	flex:auto;
-} 
+	background-color: red;
+} 	
 
 
 #flex-container> .right-item{
-	width: 10rem;
+	width: 50%;
+	height: auto;
+	flex: auto;
+	background-color :beige;
 }
