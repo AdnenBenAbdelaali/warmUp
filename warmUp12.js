@@ -42,8 +42,8 @@ Technical Details
 
  	while(check === true) {
  			check = false;
- 			for(var j = 0; j < arrayfinal.length-1; j++) {
- 				if( (arrayfinal[j] < 0) || (arrayfinal[j] > 100) ) {
+ 			for(var j = 0; j < arrayFinal.length-1; j++) {
+ 				if( (arrayFinal[j] < 0) || (arrayFinal[j] > 100) ) {
  					return "One of your numbers is out of range .Try again later !"
  				}
 
