@@ -60,4 +60,8 @@ Technical Details
  	
  	return 'the range of numbers is from ' + arrayFinal[arrayFinal.length - 1] + ' to ' + arrayFinal[0];
 
- };
+ }; 
+
+ /* this is a multi line comment  
+
+ */
