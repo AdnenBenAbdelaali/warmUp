@@ -19,30 +19,34 @@ Output: 0
 Explanation: In this case, no transaction is done, i.e. max profit = 0.
 */
 
-var maxProfit = function(prices) {
+ function maxProfit(prices) {
   // YOUR CODE HERE
-  var comparison = {};
-  var buyingChoice = prices[0];
+  var comparison = [];
+  var profit = 0;
   for(let i = 0; i < prices.length - 1; i++) {
-  	if(prices[i] <= buyingChoice) {
-  		buyingChoice = prices[i];
-  		for( let j = i + 1; j < prices.length; j++) {
-  		if(prices[i] > prices[j]) {
-  			var sellingChoice = prices[j];
-  			buyingChoice = prices[i];
-  			}
-  		}
-  	}
-  	 
+    
+      var buyingChoice = prices[i];
+      var sellingChoice = prices[i + 1];
+      for( let j = i + 1; j < prices.length; j++) {
+      if(sellingChoice < prices[j]) {
+        sellingChoice = prices[j];
+        
+        }
 
-  	comparison.buyingChoice = buyingChoice;
-  	comparison.sellingChoice = sellingChoice;	
-  }
-  if(buyingChoice <= sellingChoice) {
-  	return 0;
-  }else {
-  	return comparison;	
+      }
+
+      comparison.push(sellingChoice);
+
+       
   }
   
+    
+    for(let j = 0; j < comparison.length; j++) {
+        if(comparison[j] - prices[j] > profit){
+          profit = comparison[j] - prices[j];
+        }   
+    }
+    return profit;
+  }
 
-};
+
